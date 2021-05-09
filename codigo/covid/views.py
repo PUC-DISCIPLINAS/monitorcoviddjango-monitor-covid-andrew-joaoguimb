@@ -6,4 +6,10 @@ def home_view(request, *args, **kwargs):
     return render(request, 'home.html',{})
 
 def admin_view(request, *args, **kwargs):
-    return render(request, 'admin.html',{})
+    context = {
+        "country_list": [{
+            "id":"dasdsd",
+            "name": "Brazil"
+        }]
+    }
+    return render(request, 'administration/admin.html',context)
