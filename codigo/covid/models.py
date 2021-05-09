@@ -6,6 +6,9 @@ from django.db import models
 
 class Country(models.Model):
     name = models.TextField()
+    def _str_(self):
+        return self.name
+
 
 
 class Covid(models.Model):
