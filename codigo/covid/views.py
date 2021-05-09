@@ -6,26 +6,10 @@ from django.views.decorators.csrf import csrf_exempt
 
 from .models import Covid, Country
 
-class CovidForm(forms.ModelForm):
-    class Meta:
-        model = Covid
-        fields = ['deaths', 'cases', 'recovered', 'countryId']
-
-
 # Create your views here.
 
 def home_view(request, *args, **kwargs):
-    return render(request, 'home.html',{})
-
-@csrf_exempt
-def create_admin_view(request, *args, **kwargs):
-    form = CovidForm(request.POST or None)
-    if form.is_valid():
-        form.save()
-    context = {
-        'form': form
-    }
-    return render(request, 'admin.html', context)
+    return render(request, 'dashboard/home.html',{})
 
 def total_data_view(request, *args, **kwargs):
     context = {
