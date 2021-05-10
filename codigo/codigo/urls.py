@@ -19,6 +19,6 @@ from django.urls import path
 from covid.views import home_view, total_data_view
 
 urlpatterns = [
-    path('', home_view, name='home'),
+    path('', total_data_view, name='home'),
     path('admin', admin.site.urls, ),
 ]
