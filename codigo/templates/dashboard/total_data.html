@@ -1,13 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="flex">
+    <div class="card warning">
+        <span>Cases: {{ totalCases }}</span>
+    </div>
+    <div class="card error">
+        <span>Deaths: {{ totalDeaths }}</span>
+    </div>
+    <div class="card success">
+        <span>Recovered: {{ totalRecovered }}</span>
+    </div>
+</div>
 
-<div>
-    <p> {{ totalDeaths }} mortes</p>
-</div>
-<div>
-    <p> {{ totalCases }} casos</p>
-</div>
-<div>
-    <p> {{ totalRecovered }} recuperados</p>
-</div>
 
 <select>
     {% for country in countries %}
@@ -31,3 +35,4 @@
 
 
 </ul>
+{% endblock content %}

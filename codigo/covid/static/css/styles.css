@@ -1,0 +1,38 @@
+*{
+    background-color: #3B4252;
+    color: #E5E9F0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.flex{
+    display: flex;
+    justify-content: space-evenly;
+    margin: 3%;
+}
+
+div.card{
+    padding: 2%;
+    width: 20%;
+    border-radius: 4px;
+    box-shadow: 7px 3px 13px #0000004d;
+}
+
+div.card.error{
+    background-color: #BF616A
+}
+
+div.card.warning{
+    background-color: #EBCB8B
+}
+
+div.card.success{
+    background-color: #A3BE8C
+}
+
+div.card > span{
+    background-color: inherit;
+    color: #3B4252;
+    font-weight: bolder;
+    font-size: 1.25em;
+}
+
