@@ -8,18 +8,22 @@
 <div>
     <p> {{ totalRecovered }} recuperados</p>
 </div>
+<form method="POST" action="{% url 'country' %}">
+    {% csrf_token %}
+    <select name="select">
+        {% for country in countriesData %}
+           <option value="{{country.id}}" name="country"
+               {% if country.name == Brazil %}selected="selected"{% endif %}>
+               {{ country.id  }} - {{ country.name }}
+           </option>
+        {% endfor %}
+    </select>
+    <button type="submit">Pesquisar</button>
 
-<select>
-    {% for country in countries %}
-       <option value="{{country}}"
-           {% if country == Brazil %}selected="selected"{% endif %}>
-           {{ country }}
-       </option>
-    {% endfor %}
-</select>
+</form>
 
 
-<ul>
+<ul name="test">
     {% for country, data in dataByCountry.items %}
          <li>{{ country }}: </li>
         <ul
