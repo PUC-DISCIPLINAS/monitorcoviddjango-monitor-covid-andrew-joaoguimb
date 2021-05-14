@@ -1,12 +1,15 @@
-
-<div>
-    <p> {{ totalDeaths }} mortes</p>
-</div>
-<div>
-    <p> {{ totalCases }} casos</p>
-</div>
-<div>
-    <p> {{ totalRecovered }} recuperados</p>
+{% extends "base.html" %}
+{% block content %}
+<div class="flex">
+    <div class="card warning">
+        <span>Cases: {{ totalCases }}</span>
+    </div>
+    <div class="card error">
+        <span>Deaths: {{ totalDeaths }}</span>
+    </div>
+    <div class="card success">
+        <span>Recovered: {{ totalRecovered }}</span>
+    </div>
 </div>
 <form method="POST" action="{% url 'country' %}">
     {% csrf_token %}
@@ -22,11 +25,10 @@
 
 </form>
 
-
-<ul name="test">
+<ul>
     {% for country, data in dataByCountry.items %}
          <li>{{ country }}: </li>
-        <ul
+        <ul>
         {% for counts,values in data.items %}
             <li>{{ values }}: {{ counts }}</li>
         {% endfor %}
@@ -35,3 +37,4 @@
 
 
 </ul>
+{% endblock content %}
