@@ -9,6 +9,16 @@
     <p> {{ totalRecovered }} recuperados</p>
 </div>
 
+<select>
+    {% for country in countries %}
+       <option value="{{country}}"
+           {% if country == Brazil %}selected="selected"{% endif %}>
+           {{ country }}
+       </option>
+    {% endfor %}
+</select>
+
+
 <ul>
     {% for country, data in dataByCountry.items %}
          <li>{{ country }}: </li>

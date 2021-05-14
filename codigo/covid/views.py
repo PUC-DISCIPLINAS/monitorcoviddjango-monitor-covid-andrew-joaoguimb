@@ -14,19 +14,19 @@ def home_view(request, *args, **kwargs):
 def total_data_view(request, *args, **kwargs):
     all_countries = Country.objects.all()
     obj = {}
-
+    countriesName = []
     for country in all_countries:
+        covid = Covid.objects.get(countryId=country.id)
         totalDataByCountry = {
-            'deaths': Covid.objects.filter(countryId=country.id).aggregate(Sum('deaths'))['deaths__sum'],
-            'recovered': Covid.objects.filter(countryId=country.id).aggregate(Sum('recovered'))['recovered__sum'],
-            'cases':  Covid.objects.filter(countryId=country.id).aggregate(Sum('cases'))['cases__sum']
+            'deaths': covid.deaths,
+            'recovered': covid.recovered,
+            'cases': covid.cases
         }
-
-        print(totalDataByCountry)
         obj[f'{country.name}'] = totalDataByCountry
+        countriesName.append(country.name)
 
-    print(obj)
     context = {
+        'countries': countriesName,
         'dataByCountry': obj,
         'totalDeaths': Covid.objects.aggregate(Sum('deaths'))['deaths__sum'],
         'totalRecovered': Covid.objects.aggregate(Sum('recovered'))['recovered__sum'],
