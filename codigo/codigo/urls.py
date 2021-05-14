@@ -16,10 +16,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from covid.views import home_view,admin_view
+from covid.views import home_view, total_data_view
 
 urlpatterns = [
-    path('', home_view, name='home'),
-    path('admin', admin_view, name='home'),
-    path('admin-app/', admin.site.urls),
+    path('', total_data_view, name='home'),
+    path('admin', admin.site.urls, ),
 ]

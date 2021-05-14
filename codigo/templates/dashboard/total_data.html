@@ -1,0 +1,23 @@
+
+<div>
+    <p> {{ totalDeaths }} mortes</p>
+</div>
+<div>
+    <p> {{ totalCases }} casos</p>
+</div>
+<div>
+    <p> {{ totalRecovered }} recuperados</p>
+</div>
+
+<ul>
+    {% for country, data in dataByCountry.items %}
+         <li>{{ country }}: </li>
+        <ul
+        {% for counts,values in data.items %}
+            <li>{{ values }}: {{ counts }}</li>
+        {% endfor %}
+        </ul>
+    {% endfor %}
+
+
+</ul>
