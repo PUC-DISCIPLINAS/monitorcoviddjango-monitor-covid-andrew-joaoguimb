@@ -11,21 +11,22 @@
 </head>
 
 <body>
+
 <header>
     <h1>COVID Dashboard</h1>
-    <nav>
-      {% if request.user.is_authenticated %}
-      <ul>
-        <li><a href="/admin">Admin</a></li>
-      </ul>
-      {% endif %}
-    </nav>
-    <header>
-        <main>
-            {% block content %}
+    <a href="/admin">
+        <div id="button">
+            Administração
+        </div>
+    </a>
 
-            {% endblock content %}
-        </main>
-</body>{% load static %}
+</header>
+<main>
+    {% block content %}
+
+    {% endblock content %}
+</main>
+</body>
+{% load static %}
 
 </html>
