@@ -39,7 +39,6 @@ def country_view(request, *args, **kwargs):
         country_covid_data = Covid.objects.get(id=country_id)
         context['countryName'] = Country.objects.get(id=country_id).name
         context['data'] = country_covid_data
-        print(context['data'].deaths)
     return render(request, 'dashboard/country_page.html', context)
 
 

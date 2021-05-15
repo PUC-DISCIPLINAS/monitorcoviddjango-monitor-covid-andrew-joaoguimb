@@ -1,9 +1,18 @@
 {% extends "base.html" %}
 {% block content %}
-<h1>Hello World</h1>
 
-<h1>{{ countryName }}</h1>
-<p>{{ data.cases }}</p>
-<h2> {{ totalDeaths }} </h2>
+<div class="flex">
+    <h1>{{ countryName }}: </h1>
+    <div class="card warning">
+        <span>Cases: {{ data.cases }}</span>
+    </div>
+    <div class="card error">
+        <span>Deaths: {{ data.deaths }}</span>
+    </div>
+    <div class="card success">
+        <span>Recovered: {{ data.recovered }}</span>
+    </div>
+</div>
+
 
 {% endblock content %}
