@@ -1,4 +1,4 @@
-# Corretora da bolsa de valores com RabbitMQ
+# Monitor Covid 19 Django
 
 **Andrew Costa Silva, andrew.costa@sga.pucminas.br**
 
@@ -67,6 +67,13 @@ Para a realização deste trabalho foram utilizadas as seguintes tecnologias:
 ![Diagrama Geral da Solução](artefatos/diagrama_arquitetura.png)
 
 ## 3. Sistema desenvolvido
+
+Para a execução da aplicação no modo de administração é necessário acessar com as seguintes credenciais:
+
+| |  |   |
+| --- |:---:| ---:|
+| usuário | `admin`|
+| senha|`password`|
 
 ![Alt text](artefatos/images/tela_inicial.png "Title")
 
