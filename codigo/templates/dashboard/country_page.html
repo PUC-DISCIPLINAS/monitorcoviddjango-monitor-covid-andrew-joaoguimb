@@ -29,6 +29,9 @@
         <span>Recovered: {{ data.recovered }}</span>
     </div>
 </div>
+<div id="table-container">
 
+    {% include "dashboard/test.html" with table=table %}
+</div>
 
 {% endblock content %}

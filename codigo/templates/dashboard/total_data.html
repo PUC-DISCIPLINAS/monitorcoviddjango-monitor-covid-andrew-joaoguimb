@@ -1,4 +1,6 @@
 {% extends "base.html" %}
+{# tutorial/templates/tutorial/people.html #}
+{% load render_table from django_tables2 %}
 {% block content %}
 <div class="flex">
     <form class="card" method="POST" action="{% url 'country' %}">
@@ -25,21 +27,9 @@
     </div>
 
 </div>
-<div>
+<div id="table-container">
 
+    {% include "dashboard/test.html" with table=table %}
 </div>
 
-
-<ul>
-    {% for country, data in dataByCountry.items %}
-    <li>{{ country }}:</li>
-    <ul>
-        {% for counts,values in data.items %}
-        <li>{{ values }}: {{ counts }}</li>
-        {% endfor %}
-    </ul>
-    {% endfor %}
-
-
-</ul>
 {% endblock content %}
