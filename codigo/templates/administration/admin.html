@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Administration</h2>
+<form method="post" action="/cases">
+    <label for="country">
+        Country
+        <select name="country">
+            {% for country in country_list %}
+            <option value=country.name>{{country.name}}</option>
+            {% endfor %}
+        </select>
+    </label>
+    <label for="cases">
+        Cases
+        <input  min="0" type="number" name="cases">
+    </label>
+    <label for="deaths">
+        Deaths
+        <input  min="0"type="number" name="deaths">
+    </label>
+    Recuperations
+    <label for="recuperations">
+        <input  min="0"type="number" name="recuperations">
+    </label>
+    <button type="submit">
+        Save
+    </button>
+</form>
+{% endblock content %}

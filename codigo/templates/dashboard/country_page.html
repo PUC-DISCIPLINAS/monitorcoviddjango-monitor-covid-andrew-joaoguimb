@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>{{ countryName }}: </h1>
+<div class="flex">
+    <form class="card" method="POST" action="{% url 'country' %}">
+        {% csrf_token %}
+        <select name="select">
+            <option value="Global">
+                0 - Global
+            </option>
+            {% for country in countriesData %}
+            <option value="{{country.id}}" name="country" {% if country.name == countryName %}selected="selected" {% endif %}>
+
+                {{ country.id }} - {{ country.name }}
+            </option>
+            {% endfor %}
+        </select>
+        <button type="submit">Pesquisar</button>
+
+    </form>
+
+    <div class="card warning">
+        <span>Cases: {{ data.cases }}</span>
+    </div>
+    <div class="card error">
+        <span>Deaths: {{ data.deaths }}</span>
+    </div>
+    <div class="card success">
+        <span>Recovered: {{ data.recovered }}</span>
+    </div>
+</div>
+<div id="table-container">
+
+    {% include "dashboard/test.html" with table=table %}
+</div>
+
+{% endblock content %}

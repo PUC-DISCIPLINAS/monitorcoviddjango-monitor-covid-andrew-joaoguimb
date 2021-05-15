@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{# tutorial/templates/tutorial/people.html #}
+{% load render_table from django_tables2 %}
+{% block content %}
+<div class="flex">
+    <form class="card" method="POST" action="{% url 'country' %}">
+        {% csrf_token %}
+        <select name="select">
+            <option value="Global">0 - Global</option>
+            {% for country in countriesData %}
+            <option value="{{country.id}}" name="country">
+                {{ country.id }} - {{ country.name }}
+            </option>
+            {% endfor %}
+        </select>
+        <button type="submit">Pesquisar</button>
+
+    </form>
+    <div class="card warning">
+        <span>Cases: {{ totalCases }}</span>
+    </div>
+    <div class="card error">
+        <span>Deaths: {{ totalDeaths }}</span>
+    </div>
+    <div class="card success">
+        <span>Recovered: {{ totalRecovered }}</span>
+    </div>
+
+</div>
+<div id="table-container">
+
+    {% include "dashboard/test.html" with table=table %}
+</div>
+
+{% endblock content %}
