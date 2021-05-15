@@ -16,10 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from covid.views import home_view, total_data_view, country_view
+from covid.views import home_view, total_data_view, country_view, PersonListView
 
 urlpatterns = [
     path('', total_data_view, name='home'),
     path('admin', admin.site.urls ),
-    path('country', country_view, name="country")
+    path('country', country_view, name="country"),
+    path('test', PersonListView.as_view())
 ]
