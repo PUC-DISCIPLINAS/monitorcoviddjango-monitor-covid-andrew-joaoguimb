@@ -1,6 +1,19 @@
 {% extends "base.html" %}
 {% block content %}
 <div class="flex">
+    <form class="card" method="POST" action="{% url 'country' %}">
+        {% csrf_token %}
+        <select name="select">
+            <option value="Global">0 - Global</option>
+            {% for country in countriesData %}
+            <option value="{{country.id}}" name="country">
+                {{ country.id }} - {{ country.name }}
+            </option>
+            {% endfor %}
+        </select>
+        <button type="submit">Pesquisar</button>
+
+    </form>
     <div class="card warning">
         <span>Cases: {{ totalCases }}</span>
     </div>
@@ -10,29 +23,21 @@
     <div class="card success">
         <span>Recovered: {{ totalRecovered }}</span>
     </div>
-</div>
-<form method="POST" action="{% url 'country' %}">
-    {% csrf_token %}
-    <select name="select">
-        {% for country in countriesData %}
-           <option value="{{country.id}}" name="country"
-               {% if country.name == Brazil %}selected="selected"{% endif %}>
-               {{ country.id  }} - {{ country.name }}
-           </option>
-        {% endfor %}
-    </select>
-    <button type="submit">Pesquisar</button>
 
-</form>
+</div>
+<div>
+
+</div>
+
 
 <ul>
     {% for country, data in dataByCountry.items %}
-         <li>{{ country }}: </li>
-        <ul>
+    <li>{{ country }}:</li>
+    <ul>
         {% for counts,values in data.items %}
-            <li>{{ values }}: {{ counts }}</li>
+        <li>{{ values }}: {{ counts }}</li>
         {% endfor %}
-        </ul>
+    </ul>
     {% endfor %}
 
 

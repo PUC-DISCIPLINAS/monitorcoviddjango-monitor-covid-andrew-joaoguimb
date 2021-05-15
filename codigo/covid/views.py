@@ -30,12 +30,17 @@ def home_view(request, *args, **kwargs):
 
 def country_view(request, *args, **kwargs):
     context = {
+        'countriesData': countriesData,
+        'dataByCountry': obj,
         'totalDeaths': Covid.objects.aggregate(Sum('deaths'))['deaths__sum'],
         'totalRecovered': Covid.objects.aggregate(Sum('recovered'))['recovered__sum'],
         'totalCases': Covid.objects.aggregate(Sum('cases'))['cases__sum']
     }
     if (request.method == 'POST'):
         country_id = request.POST['select']
+        if(country_id == "Global"):
+            return render(request, 'dashboard/total_data.html', context)
+
         country_covid_data = Covid.objects.get(id=country_id)
         context['countryName'] = Country.objects.get(id=country_id).name
         context['data'] = country_covid_data

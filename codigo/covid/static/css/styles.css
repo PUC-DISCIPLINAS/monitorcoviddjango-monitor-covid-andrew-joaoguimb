@@ -10,6 +10,7 @@ header {
     justify-content: space-between;
     align-items: center;
 }
+
 header a {
     text-decoration: none;
     color: #E5E9F0;
@@ -30,32 +31,64 @@ header a {
 }
 
 
-.flex{
+.flex {
     display: flex;
     justify-content: space-evenly;
     margin: 3%;
 }
 
-div.card{
+form.card,
+div.card {
     padding: 2%;
     width: 20%;
     border-radius: 4px;
     box-shadow: 7px 3px 13px #0000004d;
 }
 
-div.card.error{
+form.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 10%;
+}
+
+form.card button {
+    margin-top: 20px;
+    background-color: #2E3440;
+    border: none;
+    width: 90px;
+    height: 35px;
+    color: #E5E9F0;
+    border-radius: 10px;
+}
+
+form.card button:hover {
+    background-color: #434C5E;
+    cursor: pointer;
+}
+
+form.card select {
+    width: 90%;
+    cursor: pointer;
+    border-radius: 4px;
+    border: 1px solid transparent;
+    border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+}
+
+div.card.error {
     background-color: #BF616A
 }
 
-div.card.warning{
+div.card.warning {
     background-color: #EBCB8B
 }
 
-div.card.success{
+div.card.success {
     background-color: #A3BE8C
 }
 
-div.card > span{
+div.card > span {
     background-color: inherit;
     color: #3B4252;
     font-weight: bolder;
