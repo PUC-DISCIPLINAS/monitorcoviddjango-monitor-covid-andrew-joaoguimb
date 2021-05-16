@@ -75,11 +75,11 @@ Para a execução da aplicação no modo de administração é necessário acess
 | usuário | `admin`|
 | senha|`password`|
 
-![Alt text](artefatos/images/tela_inicial.png "Title")
+![Alt text](artefatos/full_dasboard.png "Title")
 
 1. O usuário pode cadastrar uma oferta de compra preenchendo o formulário, informando o nome da corretora, nome da ação, quantide, preço e marcando a opção "Comprar", após isso será adicionado essa oferta na lista de compras
 
-![Alt text](artefatos/images/cadastro.png "Title")
+![Alt text](artefatos/country_data.png "Title")
 
 2. O administrador poderá cadastrar dados de infecções e submentendo estas informações para aplicação
 
