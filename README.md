@@ -62,10 +62,6 @@ Para a realização deste trabalho foram utilizadas as seguintes tecnologias:
 - **django-tables2**: Biblioteca para o Python de criação de tabelas em Html, seu objetivo é simplificar a tarefa de transformação de dados em tabelas Html oferencendo ferramentas de paginação e ordenação.
 - **Heroku**: Plataforma Paas (*Plataform as a Service*) em nuvem que possibilita a construção, execução e operação de aplicações simplificando o caminho de entrega para os usuários, utilizado para publicação online do trabalho.
 
-### 2.3 Diagrama da Solução
-
-![Diagrama Geral da Solução](artefatos/diagrama_arquitetura.png)
-
 ## 3. Sistema desenvolvido
 
 Para a execução da aplicação no modo de administração é necessário acessar com as seguintes credenciais:
@@ -75,13 +71,13 @@ Para a execução da aplicação no modo de administração é necessário acess
 | usuário | `admin`|
 | senha|`password`|
 
-![Alt text](artefatos/full_dasboard.png "Title")
+![Alt text](artefatos/full_dashboard.png "Title")
 
-1. O usuário pode cadastrar uma oferta de compra preenchendo o formulário, informando o nome da corretora, nome da ação, quantide, preço e marcando a opção "Comprar", após isso será adicionado essa oferta na lista de compras
+1. O usuário ao entrar na aplicação poderá visualizar os dados de casos, mortes e recuperados de todos os países e uma tabela com dados de cada país em específico.
 
 ![Alt text](artefatos/country_data.png "Title")
 
-2. O administrador poderá cadastrar dados de infecções e submentendo estas informações para aplicação
+2. O usuário poderá filtrar os dados de acordo com o país ao selecionar o nome do país e confirmar a pesquisa.
 
 ## 4. Avaliação
 
